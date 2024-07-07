@@ -57,7 +57,6 @@ setup:
     LDR R1, =DSP_STATUS_REG_ADDR
     LDR R2, =DSP_DATA_REG1_ADDR
     LDR R3, =DSP_DATA_REG2_ADDR
-    MOV LR, PC                         ; Save return address
     BX LR                              ; Return from setup function
 
 process_commands:
@@ -72,7 +71,6 @@ process_commands:
     LDR R1, =PROCESSING_FLAG
     MOV R2, #1
     STR R2, [R1]                       ; Set processing flag
-    MOV LR, PC                         ; Save return address
     BX LR                              ; Return from function
 
 /* Обработчик прерываний */
